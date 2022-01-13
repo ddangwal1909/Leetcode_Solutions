@@ -25,7 +25,7 @@ class Solution:
         for i in range(len(boxes)):
             ops=0
             for j in nonzero_idx:
-                ops+=int(boxes[j])*abs(i-j)
+                ops+=abs(i-j)
             
             res.append(ops)
         return res
