@@ -1,4 +1,13 @@
 class Solution:
+    
+    def canJump(self, nums: List[int]) -> bool:        
+        max_reach = 0
+        for i in range(len(nums)):
+            if i <= max_reach:                
+                max_reach = max(max_reach,i+nums[i])
+        return max_reach >= len(nums) - 1	
+    
+    '''
     def canJump(self, nums: List[int]) -> bool:
         
         jmp_dp=[False for i in range(len(nums))]
@@ -16,4 +25,4 @@ class Solution:
             return True
         else:
             return False
-        
+        '''
