@@ -29,5 +29,4 @@ class Solution:
             i+=1
         
         res.append(tmp)
-        print(mapped)
         return res
