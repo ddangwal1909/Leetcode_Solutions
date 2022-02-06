@@ -4,7 +4,7 @@ class Solution:
         visited=[]
         
         mx=0
-        
+        @lru_cache(None)
         def helper(i,j):
             
             tmp=grid[i][j]
