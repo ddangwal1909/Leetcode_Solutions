@@ -7,6 +7,9 @@ class Solution:
         fresh=0
         empty=0
         rotten=0
+        
+        
+        ## create a status table and check for number of rotten,fresh and empty cells
         for i in range(len(grid)):
             for j in range(len(grid[0])):
                 if grid[i][j]==0 or grid[i][j]==2:
@@ -19,11 +22,14 @@ class Solution:
                 else:
                     fresh+=1
         
+        
         min_elapsed=0
         
+        ## check if all cells are empty
         if empty==len(grid)*len(grid[0]):
             return 0
         
+        ## check if matrix only has empty and rotten cells
         if empty+rotten == len(grid)*len(grid[0]):
             return 0
         
@@ -34,6 +40,7 @@ class Solution:
             else:
                 tmp_queue=queue
                 queue=[]
+                ## iterate through all the rotten oranges 
                 while tmp_queue:
                     curr=tmp_queue[0]
                     tmp_queue.pop(0)
@@ -45,7 +52,6 @@ class Solution:
                                 fresh-=1
                                 queue.append((i+r,j+c))
                 min_elapsed+=1
-            print(queue)
         return -1
                             
         
