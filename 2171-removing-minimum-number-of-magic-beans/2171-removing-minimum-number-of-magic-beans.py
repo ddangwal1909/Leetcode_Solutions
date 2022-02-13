@@ -9,7 +9,7 @@ class Solution:
         prefix[0]=0
         for i in range(len(beans)):
             prefix[i+1]=prefix[i]+beans[i]
-        print(prefix)
+        #print(prefix)
         hashmap={}
         
         for i in range(len(beans)):
