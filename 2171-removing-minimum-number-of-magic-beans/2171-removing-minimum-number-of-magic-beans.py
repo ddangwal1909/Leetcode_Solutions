@@ -5,13 +5,6 @@ class Solution:
         mn=math.inf
         n=len(beans)
         sm=sum(beans)
-        prefix=[0]*(len(beans)+1)
-        prefix[0]=0
-        for i in range(len(beans)):
-            prefix[i+1]=prefix[i]+beans[i]
-        #print(prefix)
-        #hashmap={}
-        
         for i in range(len(beans)):
             curr_steps=(sm-(n-i)*beans[i]) 
             #hashmap[beans[i]]=curr_steps
