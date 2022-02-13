@@ -10,15 +10,12 @@ class Solution:
         for i in range(len(beans)):
             prefix[i+1]=prefix[i]+beans[i]
         #print(prefix)
-        hashmap={}
+        #hashmap={}
         
         for i in range(len(beans)):
-            if beans[i] not in hashmap.keys():
-                curr_steps=(sm-(n-i)*beans[i]) 
-                hashmap[beans[i]]=curr_steps
-                mn=min(curr_steps,mn)
-            else:
-                curr_steps=hashmap[beans[i]]
+            curr_steps=(sm-(n-i)*beans[i]) 
+            #hashmap[beans[i]]=curr_steps
+            mn=min(curr_steps,mn)
             #print(beans[i],curr_steps)
         return mn
             
