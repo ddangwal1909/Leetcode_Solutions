@@ -6,7 +6,7 @@ class Solution:
         res=[]
         def helper(start,curr,sm):
             
-            if sm==target and curr[:] not in res:
+            if sm==target:
                 res.append(curr[:])
                 return 
             
