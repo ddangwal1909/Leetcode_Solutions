@@ -1,6 +1,6 @@
 <h2><a href="https://leetcode.com/problems/find-the-team-size/">1303. Find the Team Size</a></h2><h3>Easy</h3><hr><div class="sql-schema-wrapper__3VBi"><a class="sql-schema-link__3cEg">SQL Schema<svg viewBox="0 0 24 24" width="1em" height="1em" class="icon__1Md2"><path fill-rule="evenodd" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></a></div><div><p>Table: <code>Employee</code></p>
 
-<div class="snipit-button extension-button" data-sig="734d11ed248706402790b20f19e1cab7" style="border-bottom: 0px; border-radius: 3px 3px 0px 0px; padding-bottom: 2px;">{ Snip }</div><pre style="margin-top: 0px;">+---------------+---------+
+<pre>+---------------+---------+
 | Column Name   | Type    |
 +---------------+---------+
 | employee_id   | int     |
@@ -21,7 +21,7 @@ Each row of this table contains the ID of each employee and their respective tea
 <p>&nbsp;</p>
 <p><strong>Example 1:</strong></p>
 
-<div class="snipit-button extension-button" data-sig="11dde35c635e4366f7c1ffe0c13f77f8" style="border-bottom: 0px; border-radius: 3px 3px 0px 0px; padding-bottom: 2px;">{ Snip }</div><pre style="margin-top: 0px;"><strong>Input:</strong> 
+<pre><strong>Input:</strong> 
 Employee Table:
 +-------------+------------+
 | employee_id | team_id    |
