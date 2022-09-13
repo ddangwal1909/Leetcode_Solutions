@@ -1,9 +1,12 @@
 # Write your MySQL query statement below
 
+select distinct name
+from employee where 
+id in (
 select 
-    a.name
-    from employee a
-    inner join employee b
-    on a.id = b.managerid
-    group by 1
-    having count(*)>=5;
+managerid
+from
+employee
+group by 1
+having count(*)>=5
+);
