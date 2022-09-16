@@ -1,37 +1,30 @@
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
         
-        #print(graph)
         
+        start=0
+        end=len(graph)-1
         res=[]
         
-        start = 0
-        end = len(graph)-1
-        
-        def dfs(i,curr_path):
+        def helper(i,curr):
             nonlocal res
-            nonlocal end
+            nonlocal graph
+            nonlocal end 
+            print(curr)
+            if i==end:
+                curr.append(i)
+                res.append(curr[:])
+                curr=curr[:-1]
             
-            curr_path.append(i)
-            for j in graph[i]:
-                #print(curr_path,j)
-                if j==end:
-                    #print("Here!")
-                    curr_path.append(end)
-                    res.append(curr_path[:])
-                    curr_path.pop(len(curr_path)-1)
-                else:
-                    dfs(j,curr_path[:])
-            curr_path.pop(len(curr_path)-1)
+            else:
+                curr.append(i)
+                for j in graph[i]:
+                    helper(j,curr[:])
+                curr=curr[:-1]
             return
         
-        dfs(start,[])
+        helper(start,[])
         
         return res
-            
-            
         
         
-        
-        
-        return []
