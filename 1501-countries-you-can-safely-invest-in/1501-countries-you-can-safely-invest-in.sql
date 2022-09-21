@@ -1,4 +1,5 @@
 # Write your MySQL query statement below
+# Write your MySQL query statement below
 
 WITH
   tmp AS (select a.*,b.name as country
