@@ -25,6 +25,7 @@ class Solution:
         print(visited)
         print(graph)
         result=False
+        @lru_cache(maxsize=1000)
         def helper(curr_node):
             nonlocal result
             nonlocal destination
