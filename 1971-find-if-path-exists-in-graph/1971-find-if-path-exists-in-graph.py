@@ -16,14 +16,10 @@ class Solution:
             else:
                 return False
         
-        visited=[0 for i in range(max(graph.keys())+1)]
-        
-        for i in range(len(visited)):
-            if i not in graph.keys():
-                visited[i]=1
+        visited=set()
             
-        print(visited)
-        print(graph)
+       #print(visited)
+        #rint(graph)
         result=False
         @lru_cache(maxsize=1000)
         def helper(curr_node):
@@ -31,8 +27,8 @@ class Solution:
             nonlocal destination
             nonlocal visited
             nonlocal graph
-            print(curr_node)
-            visited[curr_node]=1
+            #rint(curr_node)
+            visited.add(curr_node)
             
             if result==True:
                 return
@@ -41,7 +37,7 @@ class Solution:
                 return
             else:
                 for i in graph[curr_node]:
-                    if visited[i]==0:
+                    if i not in visited:
                         helper(i)
             return
         
