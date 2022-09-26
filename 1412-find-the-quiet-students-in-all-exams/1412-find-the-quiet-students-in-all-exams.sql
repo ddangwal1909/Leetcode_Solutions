@@ -1,29 +1,26 @@
 # Write your MySQL query statement below
 
-
-with tmp as 
-(
-(
-select distinct student_id from(
-select student_id,rank() over (partition by exam_id order by score desc) rnk
-from
-Exam
-) A where rnk=1)
-union
-(
-select distinct student_id from(
-select student_id, rank() over (partition by exam_id order by score) as rnk
-from Exam
-) B where rnk=1
-)
+with cte as (
+select 
+student_id,
+rank() over (partition by exam_id order by score) as rnk_asc,
+rank() over (partition by exam_id order by score desc) as rnk_desc
+from exam
 ),
-dst_student as 
-(select distinct A.student_id,b.student_name from Exam A 
- left join Student b 
- on A.student_id = b.student_id 
+cte1 as
+(select 
+student_id, 
+min(rnk_asc) as rnk_asc,
+min(rnk_desc) as rnk_desc
+from
+ cte
+ group by 1
 )
-select
-student_id, student_name 
-from dst_student 
-where student_id not in (select * from tmp) 
-order by student_id;
+select 
+a.student_id, 
+a.student_name
+from 
+student a
+inner join (select distinct student_id from cte1 where rnk_asc<>1 and rnk_desc<>1) b
+on a.student_id=b.student_id
+order by 1;
