@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/number-of-distinct-islands/">694. Number of Distinct Islands</a></h2><h3>Medium</h3><hr><div><p>You are given an <code>m x n</code> binary matrix <code>grid</code>. An island is a group of <code>1</code>'s (representing land) connected <strong>4-directionally</strong> (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.</p>
+<h2><a href="https://leetcode.com/problems/number-of-distinct-islands/solution/">694. Number of Distinct Islands</a></h2><h3>Medium</h3><hr><div><p>You are given an <code>m x n</code> binary matrix <code>grid</code>. An island is a group of <code>1</code>'s (representing land) connected <strong>4-directionally</strong> (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.</p>
 
 <p>An island is considered to be the same as another if and only if one island can be translated (and not rotated or reflected) to equal the other.</p>
 
