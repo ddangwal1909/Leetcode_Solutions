@@ -7,8 +7,6 @@ class Solution:
         dp[-1]=nums[-1]
         dp[-2]=nums[-2]
         
-        
-        
         for i in range(len(nums)-3,-1,-1):
             mx_curr=-100000
             for j in range(i+2,len(nums)):
